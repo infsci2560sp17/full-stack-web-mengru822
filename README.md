@@ -9,7 +9,8 @@ TODO : Modify to match your project specific Travis Build
 
 ## Web Site
 
-TODO : Please provide a link to your web site ![heroku meng](https://agile-mountain-46991.herokuapp.com/)
+TODO : Please provide a link to your web site [heroku link](https://agile-mountain-46991.herokuapp.com/)
+
 
 ## Key Features
 
