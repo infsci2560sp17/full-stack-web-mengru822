@@ -8,7 +8,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - TBD.
 
-<<<<<<< HEAD
 ## [v1.2] - 2017-01-25
 ### Added
 - Changelog created and linked to Readme.md
