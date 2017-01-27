@@ -17,7 +17,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
     - How will it meet the minimum project requirements?
     - Why is your proposed Web application unique or creative beyond simply meeting the minimum requirements?
 
-## [v1.1] - 2017-01-21
+## [v1.01] - 2017-01-21
 ### Added
 - Cloned, configured, and compiled the scaffold project.
 - Configured developer workspace.
