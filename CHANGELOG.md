@@ -24,6 +24,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Deployed to Heroku.
 
 [Unreleased]: https://github.com/infsci2560sp17/full-stack-web-BrianKolowitz/compare/v1.2...HEAD
-[v1.0]: https://github.com/infsci2560sp17/full-stack-web-mengru822/compare/master...v1.0
+[v1.01]: https://github.com/infsci2560sp17/full-stack-web-mengru822/compare/master...v1.01
 
     
