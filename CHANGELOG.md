@@ -9,7 +9,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [v1.2] - 2017-01-25
 ### Added
-- Changelog created and linked to Readme.md
+- Answered in README.md
+    - What is the proposed name for your Web application?
+    - Who is the target audience for your Web application?
+    - What problem is it intended to solve for the target audience?
+    - How will it meet the minimum project requirements?
+    - Why is your proposed Web application unique or creative beyond simply meeting the minimum requirements?
 
 ## [v1.1] - 2017-01-18
 ### Added
