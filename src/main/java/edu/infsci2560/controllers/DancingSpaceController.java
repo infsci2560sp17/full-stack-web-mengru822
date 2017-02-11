@@ -25,9 +25,9 @@ import org.springframework.web.servlet.ModelAndView;
  * @author kolobj
  */
 @Controller
-public class DvdsController {
+public class DancingSpaceController {
     @Autowired
-    private DvdRepository repository;
+    private DancingSpaceRepository repository;
     
     @RequestMapping(value = "dvds", method = RequestMethod.GET)
     public ModelAndView index() {        
@@ -35,7 +35,7 @@ public class DvdsController {
     }
     
     @RequestMapping(value = "dvds/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    public ModelAndView create(@ModelAttribute @Valid Dvd dvd, BindingResult result) {
+    public ModelAndView create(@ModelAttribute @Valid DancingSpace dvd, BindingResult result) {
         repository.save(dvd);
         return new ModelAndView("dvds", "dvds", repository.findAll());
     }
