@@ -5,9 +5,9 @@
  */
 package edu.infsci2560.services;
 
-import edu.infsci2560.models.DancingSpace;
-import edu.infsci2560.models.DancingSpace.WorkoutType;
-import edu.infsci2560.repositories.DancingSpaceRepository;
+import edu.infsci2560.models.Dvd;
+import edu.infsci2560.models.Dvd.WorkoutType;
+import edu.infsci2560.repositories.DvdRepository;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,26 +28,26 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author kolobj
  */
 @RestController
-@RequestMapping("/public/api/dancingspace")
-public class DancingSpaceService {
+@RequestMapping("/public/api/dvds")
+public class DvdsService {
 
     @Autowired
-    private DancingSpaceRepository repository;
+    private DvdRepository repository;
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<Iterable<DancingSpace>> list() {
+    public ResponseEntity<Iterable<Dvd>> list() {
         HttpHeaders headers = new HttpHeaders();
         return new ResponseEntity<>(repository.findAll(), headers, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<DancingSpace> list(@PathVariable("id") Long id) {
+    public ResponseEntity<Dvd> list(@PathVariable("id") Long id) {
         HttpHeaders headers = new HttpHeaders();
         return new ResponseEntity<>(repository.findOne(id), headers, HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.POST, consumes="application/json", produces = "application/json")
-    public ResponseEntity<DancingSpace> create(@RequestBody DancingSpace dvd) {
+    public ResponseEntity<Dvd> create(@RequestBody Dvd dvd) {
         HttpHeaders headers = new HttpHeaders();
         return new ResponseEntity<>(repository.save(dvd), headers, HttpStatus.OK);
     }
