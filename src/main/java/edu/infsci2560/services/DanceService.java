@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.infsci2560.services;
 
-import edu.infsci2560.models.Dvd;
-import edu.infsci2560.models.Dvd.WorkoutType;
-import edu.infsci2560.repositories.DvdRepository;
+import edu.infsci2560.models.Dance;
+import edu.infsci2560.models.Dance.DanceType;
+import edu.infsci2560.repositories.DanceRepository;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,27 +23,27 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author kolobj
  */
 @RestController
-@RequestMapping("/public/api/dvds")
-public class DvdsService {
+@RequestMapping("/public/api/dance")
+public class DanceService {
 
     @Autowired
-    private DvdRepository repository;
+    private DanceRepository repository;
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<Iterable<Dvd>> list() {
+    public ResponseEntity<Iterable<Dance>> list() {
         HttpHeaders headers = new HttpHeaders();
         return new ResponseEntity<>(repository.findAll(), headers, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<Dvd> list(@PathVariable("id") Long id) {
+    public ResponseEntity<Dance> list(@PathVariable("id") Long id) {
         HttpHeaders headers = new HttpHeaders();
         return new ResponseEntity<>(repository.findOne(id), headers, HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.POST, consumes="application/json", produces = "application/json")
-    public ResponseEntity<Dvd> create(@RequestBody Dvd dvd) {
+    public ResponseEntity<Dance> create(@RequestBody Dance dance) {
         HttpHeaders headers = new HttpHeaders();
-        return new ResponseEntity<>(repository.save(dvd), headers, HttpStatus.OK);
+        return new ResponseEntity<>(repository.save(dance), headers, HttpStatus.OK);
     }
 }

@@ -5,8 +5,8 @@
  */
 package edu.infsci2560.controllers;
 
-import edu.infsci2560.models.Dvd;
-import edu.infsci2560.repositories.DvdRepository;
+import edu.infsci2560.models.Dance;
+import edu.infsci2560.repositories.DanceRepository;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -25,19 +25,19 @@ import org.springframework.web.servlet.ModelAndView;
  * @author kolobj
  */
 @Controller
-public class DvdsController {
+public class DancesController {
     @Autowired
-    private DvdRepository repository;
-    
-    @RequestMapping(value = "dvds", method = RequestMethod.GET)
-    public ModelAndView index() {        
-        return new ModelAndView("dvds", "dvds", repository.findAll());
+    private DanceRepository repository;
+
+    @RequestMapping(value = "dances", method = RequestMethod.GET)
+    public ModelAndView index() {
+        return new ModelAndView("dances", "dances", repository.findAll());
     }
-    
-    @RequestMapping(value = "dvds/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    public ModelAndView create(@ModelAttribute @Valid Dvd dvd, BindingResult result) {
-        repository.save(dvd);
-        return new ModelAndView("dvds", "dvds", repository.findAll());
+
+    @RequestMapping(value = "dances/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    public ModelAndView create(@ModelAttribute @Valid Dance dance, BindingResult result) {
+        repository.save(dance);
+        return new ModelAndView("dances", "dances", repository.findAll());
     }
-    
+
 }

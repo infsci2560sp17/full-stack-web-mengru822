@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Home</title>
+    </head>
+    <body>
+        <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s Dances!</h1>
+
+        <div>
+            <table style="border: 1px solid black">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Dance Type</th>
+                    <th>Difficulty</th>
+                    <th>Time Need</th>
+                </tr>
+                <tr data-th-each="dance : ${dances}">
+                    <td data-th-text="${dance.id}"></td>
+                    <td data-th-text="${dance.name}"></td>
+                    <td data-th-text="${dance.danceType}"></td>
+                    <td data-th-text="${dance.difficulty}"></td>
+                    <td data-th-text="${dance.timeNeed}"></td>
+                </tr>
+            </table>
+        </div>
+
+        <hr />
+        Add Dance<br />
+        <form data-th-action="@{/dances/add}" name="addDanceForm" method="post">
+            Name: <input type="text" name="name" /><br />
+            Difficulty: <input type="text" name="difficulty" /><br />
+            Time Need: <input type="text" name="timeNeed" /><br />
+            Recipe Type:<br />
+            <input type="radio" name="danceType" value="Unknown" checked="checked" /> Unknown<br />
+            <input type="radio" name="danceType" value="Jazz" /> Jazz<br />
+            <input type="radio" name="danceType" value="Bullet" /> Bullet<br />
+            <input type="radio" name="danceType" value="Street" /> Street<br />
+            <input type="radio" name="danceType" value="Folk" /> Folk<br />
+            <input type="radio" name="danceType" value="Ballroom" /> Ballroom<br />
+            <input type="submit" value="Add Dance"/>
+        </form>
+
+        <hr />
+        <form data-th-action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </body>
+</html>
