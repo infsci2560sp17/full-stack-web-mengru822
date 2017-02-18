@@ -7,6 +7,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - TBD.
 
+## [v1.03] - 2017-02-17
+### Added
+- Dance Entity
+- Dance Repository
+- Dance Service
+- Dance Controller
+- dances html
+
+### Changed
+- FullStackWebApplication.java, add some dance examples to test
+
 
 ## [v1.02] - 2017-01-28
 ### Added
