@@ -33,4 +33,4 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 [Unreleased]: https://github.com/infsci2560sp17/full-stack-web-BrianKolowitz/compare/v1.2...HEAD
 [v1.01]: https://github.com/infsci2560sp17/full-stack-web-mengru822/compare/master...v1.01
 [v1.02]: https://github.com/infsci2560sp17/full-stack-web-mengru822/compare/v1.01...v1.02
-[V1.03]: https://github.com/infsci2560sp17/full-stack-web-mengru822/compare/v1.02...v1.3   
+[V1.3]: https://github.com/infsci2560sp17/full-stack-web-mengru822/compare/v1.02...v1.3   
