@@ -6,7 +6,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ## [Unreleased]
 ### Added
 - TBD.
-
 ## [v1.3] - 2017-02-17
 ### Added
 - Dance Entity
@@ -17,7 +16,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 - FullStackWebApplication.java, add some dance examples to test
-
 
 ## [v1.02] - 2017-01-28
 ### Added
@@ -37,4 +35,4 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 [Unreleased]: https://github.com/infsci2560sp17/full-stack-web-BrianKolowitz/compare/v1.2...HEAD
 [v1.01]: https://github.com/infsci2560sp17/full-stack-web-mengru822/compare/master...v1.01
 [v1.02]: https://github.com/infsci2560sp17/full-stack-web-mengru822/compare/v1.01...v1.02
-[V1.03]: https://github.com/infsci2560sp17/full-stack-web-mengru822/compare/v1.02...V1.3   
+[V1.03]: https://github.com/infsci2560sp17/full-stack-web-mengru822/compare/v1.02...v1.3   
