@@ -11,12 +11,12 @@
                 <tr>
                     <th>ID</th>
                     <th>Category</th>
-                    <th>Music</th>
+                    <th>MusicName</th>
                 </tr>                
                 <tr data-th-each="Music : ${music}">
                     <td data-th-text="${Music.id}"></td>
                     <td data-th-text="${Music.category}"></td>
-                    <td data-th-text="${Music.music}"></td>
+                    <td data-th-text="${Music.musicName}"></td>
                 </tr>
             </table>
         </div>
@@ -30,8 +30,8 @@
             <input type="radio" name="category" value="Soft" /> Soft<br />
             <input type="radio" name="category" value="Archaic" /> Archaic<br />
             <input type="radio" name="category" value="Others" checked="checked" /> Others<br />
-            Music: <input type="text" name="music" /><br />
-            <input type="submit" value="Add Music"/>
+            Music Name: <input type="text" name="musicName" /><br />
+            <input type="submit" value="Add Musics"/>
         </form>
         
         <hr />

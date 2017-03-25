@@ -30,23 +30,23 @@ public class Music {
     protected Long id;
     protected category category;
     @Column(length = 4096)
-    protected String music;
+    protected String musicName;
 
     public Music() {
         this.id = Long.MAX_VALUE;
         this.category = category.Others;
-        this.music = music;
+        this.musicName = musicName;
     }
 
-    public Music(Long id, category category, String music) {
+    public Music(Long id, category category, String musicName) {
         this.id = id;
         this.category = category;
-        this.music = music;
+        this.musicName = musicName;
     }
 
     @Override
     public String toString() {
-        return "[ id=" + this.id + ", category=" + this.category + ", music=" + this.music + " ]";
+        return "[ id=" + this.id + ", category=" + this.category + ", music=" + this.musicName + " ]";
     }
 
     @Override
@@ -74,17 +74,17 @@ public class Music {
     }
 
     /**
-     * @return the music
+     * @return the musicName
      */
-    public String getMusic() {
-        return music;
+    public String getMusicName() {
+        return musicName;
     }
 
     /**
-     * @param set the music
+     * @param set the musicName
      */
-    public void setMusic(String music) {
-        this.music = music;
+    public void setMusicName(String musicName) {
+        this.musicName = musicName;
     }
 
     /**
