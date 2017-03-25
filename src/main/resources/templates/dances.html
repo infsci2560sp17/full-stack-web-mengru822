@@ -4,10 +4,10 @@
         <title>User Home</title>
     </head>
     <body>
-        <h1 data-th-inline="text"> wonderful dance!</h1>
+        <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s wonderful dance!</h1>
 
         <div>
-            <table style="border: 1px solid black">
+            <table style="border: 1px solid black">web
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
