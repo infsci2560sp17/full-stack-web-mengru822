@@ -15,10 +15,6 @@ spring:
         show-sql: true
         hibernate:
             ddl-auto: create-drop
-    http:
-        multipart:
-            max-file-size: 10MB
-            max-request-size: 10MB
 ---
 spring:
     profiles: test
@@ -33,7 +29,3 @@ spring:
         show-sql: true
         hibernate:
             ddl-auto: create-drop
-    http:
-        multipart:
-            max-file-size: 100MB
-            max-request-size: 100MB

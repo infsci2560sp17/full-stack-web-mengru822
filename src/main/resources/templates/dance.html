@@ -15,7 +15,7 @@
                     <th>Difficulty</th>
                     <th>Time Need</th>
                 </tr>
-                <tr data-th-each="dance : ${dances}">
+                <tr data-th-each="dance : ${dance}">
                     <td data-th-text="${dance.id}"></td>
                     <td data-th-text="${dance.name}"></td>
                     <td data-th-text="${dance.danceType}"></td>
@@ -27,7 +27,7 @@
 
         <hr />
         Add Dance<br />
-        <form data-th-action="@{/dances/add}" name="addDanceForm" method="post">
+        <form data-th-action="@{/dance/add}" name="addDanceForm" method="post">
             Name: <input type="text" name="name" /><br />
             Difficulty: <input type="text" name="difficulty" /><br />
             Time Need: <input type="text" name="timeNeed" /><br />

@@ -20,24 +20,24 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Mengru
  */
 @Controller
-public class DancesController {
+public class DanceController {
     @Autowired
     private DanceRepository repository;
 
-    @RequestMapping(value = "dances", method = RequestMethod.GET)
+    @RequestMapping(value = "dance", method = RequestMethod.GET)
     public ModelAndView index() {
-        return new ModelAndView("dances", "dances", repository.findAll());
+        return new ModelAndView("dance", "dance", repository.findAll());
     }
 
-    @RequestMapping(value = "dances/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    @RequestMapping(value = "dance/add", method = RequestMethod.POST, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView create(@ModelAttribute @Valid Dance dance, BindingResult result) {
         repository.save(dance);
-        return new ModelAndView("dances", "dances", repository.findAll());
+        return new ModelAndView("dance", "dance", repository.findAll());
     }
     
-    @RequestMapping(value = "dances/delete", method = RequestMethod.DELETE, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    @RequestMapping(value = "dance/delete", method = RequestMethod.DELETE, consumes="application/x-www-form-urlencoded", produces = "application/json")
     public ModelAndView delete(@ModelAttribute Long id) {
         repository.delete(repository.findOne(id));
-        return new ModelAndView("dances", "dances", repository.findAll());
+        return new ModelAndView("dance", "dance", repository.findAll());
     }
 }
