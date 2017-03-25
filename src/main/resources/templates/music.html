@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Useful Music</title>
+    </head>
+    <body>
+        <h1 data-th-inline="text">Explore useful music and share yours!</h1>
+
+        <div>
+            <table style="border: 1px solid black">
+                <tr>
+                    <th>ID</th>
+                    <th>Category</th>
+                    <th>Music</th>
+                </tr>                
+                <tr data-th-each="Music : ${music}">
+                    <td data-th-text="${Music.id}"></td>
+                    <td data-th-text="${Music.category}"></td>
+                    <td data-th-text="${Music.music}"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <hr />
+        Post your advice <br />
+        <form data-th-action="@{/music/add}" name="addMusicForm" method="post">
+            Category:<br />
+            <input type="radio" name="category" value="Pleasant" /> Pleasant<br />
+            <input type="radio" name="category" value="Lyrical" /> Lyrical<br />
+            <input type="radio" name="category" value="Soft" /> Soft<br />
+            <input type="radio" name="category" value="Archaic" /> Archaic<br />
+            <input type="radio" name="category" value="Others" checked="checked" /> Others<br />
+            Music: <input type="text" name="music" /><br />
+            <input type="submit" value="Add Music"/>
+        </form>
+        
+        <hr />
+        <div>Go back to <a data-th-href="@{/main}">main page</a> ! </div>
+        
+        <hr />       
+        <form data-th-action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </body>
+</html>

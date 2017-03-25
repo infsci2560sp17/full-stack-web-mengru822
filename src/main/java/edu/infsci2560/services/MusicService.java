@@ -1,8 +1,8 @@
 package edu.infsci2560.services;
 
-import edu.infsci2560.models.Dance;
-import edu.infsci2560.models.Dance.DanceType;
-import edu.infsci2560.repositories.DanceRepository;
+import edu.infsci2560.models.Music;
+import edu.infsci2560.models.Music.category;
+import edu.infsci2560.repositories.MusicRepository;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,42 +16,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+//import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
  * @author Mengru
  */
 @RestController
-@RequestMapping("/public/api/dance")
-public class DanceService {
+@RequestMapping("/public/api/music")
+public class MusicService {
 
     @Autowired
-    private DanceRepository repository;
+    private MusicRepository repository;
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<Iterable<Dance>> list() {
+    public ResponseEntity<Iterable<Music>> list() {
         HttpHeaders headers = new HttpHeaders();
         return new ResponseEntity<>(repository.findAll(), headers, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<Dance> list(@PathVariable("id") Long id) {
+    public ResponseEntity<Music> list(@PathVariable("id") Long id) {
         HttpHeaders headers = new HttpHeaders();
         return new ResponseEntity<>(repository.findOne(id), headers, HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.POST, consumes="application/json", produces = "application/json")
-    public ResponseEntity<Dance> create(@RequestBody Dance dance) {
+    public ResponseEntity<Music> create(@RequestBody Music music) {
         HttpHeaders headers = new HttpHeaders();
-        return new ResponseEntity<>(repository.save(dance), headers, HttpStatus.OK);
+        return new ResponseEntity<>(repository.save(music), headers, HttpStatus.OK);
     }
-
-    @RequestMapping(method = RequestMethod.DELETE, consumes="application/json", produces = "application/json")
-    public void delete(@PathVariable("id") Long id) {
-        //HttpHeaders headers = new HttpHeaders();
-        repository.delete(repository.findOne(id));
-        //return new ResponseEntity<>(repository.findAll(dance), headers, HttpStatus.OK);
-    }
-    
 }

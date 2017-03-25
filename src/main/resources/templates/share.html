@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Your Masterpiece</title>
+    </head>
+    
+    <body>
+        <h1 data-th-inline="text">Share your own dance</h1>
+
+        <hr />
+            <a data-th-href="@{/files}">Upload a File</a>
+        <hr />
+        
+        <hr />
+        <div>View all <a data-th-href="@{/files}">files</a> </div>
+        <hr /> 
+        
+        <hr />
+        <div>Go back to <a data-th-href="@{/main}">main page</a> ! </div>
+        
+        <hr />  
+        <form data-th-action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </body>
+</html>

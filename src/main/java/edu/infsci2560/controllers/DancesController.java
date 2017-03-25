@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.infsci2560.controllers;
 
 import edu.infsci2560.models.Dance;
@@ -22,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
- * @author kolobj
+ * @author Mengru
  */
 @Controller
 public class DancesController {
@@ -39,5 +34,10 @@ public class DancesController {
         repository.save(dance);
         return new ModelAndView("dances", "dances", repository.findAll());
     }
-
+    
+    @RequestMapping(value = "dances/delete", method = RequestMethod.DELETE, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    public ModelAndView delete(@ModelAttribute Long id) {
+        repository.delete(repository.findOne(id));
+        return new ModelAndView("dances", "dances", repository.findAll());
+    }
 }

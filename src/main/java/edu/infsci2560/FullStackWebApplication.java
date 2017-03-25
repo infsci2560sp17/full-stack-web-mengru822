@@ -3,6 +3,13 @@ package edu.infsci2560;
 import edu.infsci2560.models.Dance;
 import edu.infsci2560.models.Dance.DanceType;
 import edu.infsci2560.repositories.DanceRepository;
+import edu.infsci2560.models.Music;
+import edu.infsci2560.models.Music.category;
+import edu.infsci2560.repositories.MusicRepository;
+import edu.infsci2560.models.Good;
+import edu.infsci2560.repositories.GoodRepository;
+import edu.infsci2560.models.Video;
+import edu.infsci2560.repositories.VideoRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,8 +17,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+
 
 @SpringBootApplication
+@ComponentScan({"edu.infsci2560"})
 public class FullStackWebApplication {
 
     private static final Logger log = LoggerFactory.getLogger(FullStackWebApplication.class);
@@ -24,6 +34,23 @@ public class FullStackWebApplication {
         repository.save(new Dance(2L, "Popping", DanceType.Street,"medium", "20 min"));
         repository.save(new Dance(3L, "France Ballet", DanceType.Ballet, "hard", "15 min"));
         repository.save(new Dance(4L, "Samba", DanceType.Ballroom, "easy", "18 min"));
+
+        MusicRepository musicRepository = ctx.getBean(MusicRepository.class);
+        musicRepository.save(new Music(1L, category.Pleasant, "Party Rock Anthem -LMFAO"));
+        musicRepository.save(new Music(2L, category.Lyrical, "Just One Last Dance -Sarah Connor"));
+        musicRepository.save(new Music(3L, category.Soft, "Song From a Secret Garden -Secret Garden"));
+
+        GoodRepository goodRepository = ctx.getBean(GoodRepository.class);
+        goodRepository.save(new Good(1L, "Dancing Clothes", "Jazz", "https://www.amazon.com"));
+        goodRepository.save(new Good(2L, "Dancing Shoes", "Classic", "https://www.walmart.com"));
+        goodRepository.save(new Good(3L, "Dancing Hat", "Ballet", "https://ebay.com"));
+        
+
+        VideoRepository videoRepository = ctx.getBean(VideoRepository.class);
+        
+            videoRepository.save(new Video(1L, "Easy kids dance", "https://www.youtube.com/watch?v=t6PmB6tMBOc"));
+            videoRepository.save(new Video(2L, "Popping Final 2017","https://www.youtube.com/watch?v=Dhmgr8-tagE"));
+        
     }
 
 

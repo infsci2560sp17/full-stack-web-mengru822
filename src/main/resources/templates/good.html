@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Share Goods</title>
+    </head>
+    <body>
+        <h1 data-th-inline="text">Explore good staff in dancing and enjoy it! </h1>
+
+        <div>
+            <table style="border: 1px blue">
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Brand</th>
+                    <th>Link</th>
+                </tr>                
+                <tr data-th-each="Good : ${good}">
+                    <td data-th-text="${Good.id}"></td>
+                    <td data-th-text="${Good.title}"></td>
+                    <td data-th-text="${Good.brand}"></td>
+                    <td data-th-text="${Good.link}"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <hr />
+        Post your favorite <br />
+        <form data-th-action="@{/good/add}" name="addGoodForm" method="post">
+            Title: <input type="text" name="title" /><br />
+            Brand: <input type="text" name="brand" /><br />
+            Link to buy it: <input type="text" name="link" /><br />
+            <input type="submit" value="Add good staff"/>
+        </form>
+        
+        <hr />
+        <div>Go back to <a data-th-href="@{/main}">main page</a> ! </div>
+        
+        <hr />       
+        <form data-th-action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+    </body>
+</html>

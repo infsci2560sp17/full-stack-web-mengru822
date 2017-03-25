@@ -4,7 +4,7 @@
         <title>User Home</title>
     </head>
     <body>
-        <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s Dances!</h1>
+        <h1 data-th-inline="text"> wonderful dance!</h1>
 
         <div>
             <table style="border: 1px solid black">
@@ -41,7 +41,17 @@
             <input type="submit" value="Add Dance"/>
         </form>
 
+         <hr />
+        Delete Dance<br />
+        <form data-th-action="@{/dance/delete}" name="deleteDanceForm" method="delete">
+            Dance ID: <input type="text" name="id" /><br />
+            <input type="submit" value="Delete Dance"/>
+        </form>
+
         <hr />
+        <div>Go back to <a data-th-href="@{/main}">main page</a> ! </div>
+        
+        <hr />       
         <form data-th-action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
         </form>
