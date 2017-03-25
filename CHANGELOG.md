@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## [v1.4] - 2017-03-25
+8d22fd
+### Added
+- create Music entity and add corresponding controller, repo, service and view for it
+- create Good entity and add corresponding controller, repo, service and view for it
+- create Video entity and add corresponding controller, repo, service and view for it
+- add file upload system by creating a storage package, file upload controller and a new page
 
 ## [v1.3] - 2017-02-17
 ### Added
@@ -33,4 +40,5 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 [Unreleased]: https://github.com/infsci2560sp17/full-stack-web-BrianKolowitz/compare/v1.2...HEAD
 [v1.01]: https://github.com/infsci2560sp17/full-stack-web-mengru822/compare/master...v1.01
 [v1.02]: https://github.com/infsci2560sp17/full-stack-web-mengru822/compare/v1.01...v1.02
-[V1.3]: https://github.com/infsci2560sp17/full-stack-web-mengru822/compare/v1.02...v1.3   
+[V1.3]: https://github.com/infsci2560sp17/full-stack-web-mengru822/compare/v1.02...v1.3  
+[v1.4]: https://github.com/infsci2560sp17/full-stack-web-mengru822/compare/v1.3...v1.4
