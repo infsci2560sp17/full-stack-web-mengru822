@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -35,9 +36,14 @@ public class DanceController {
         return new ModelAndView("dance", "dance", repository.findAll());
     }
     
-    @RequestMapping(value = "dance/delete", method = RequestMethod.DELETE, consumes="application/x-www-form-urlencoded", produces = "application/json")
-    public ModelAndView delete(@ModelAttribute Long id) {
-        repository.delete(repository.findOne(id));
+     @RequestMapping(value = "dance/delete", method = RequestMethod.GET)
+    public ModelAndView deleteDance(@RequestParam(value = "id", required=true) Long id) {
+        Dance game = repository.findOne(id);
+        
+        if (game != null) {
+            repository.delete(id);
+        }
+
         return new ModelAndView("dance", "dance", repository.findAll());
     }
 }
