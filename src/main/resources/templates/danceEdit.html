@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Edit Dance</title>
+    </head>
+    <body>
+        Add Dance<br />
+        <form data-th-action="@{/dance/edit/{id}(id=${dance.id})}" data-th-object="${dance}" data-th-method="put" role="form">
+            Name: <input type="text" name="name" data-th-value="${dance.name}" /><br />
+            Difficulty: <input type="text" name="difficulty" data-th-value="${dance.difficulty}" /><br />
+            Time Need: <input type="text" name="timeNeed" data-th-value="${dance.timeNeed}" /><br />
+            Dance Type<br />
+            <input type="radio" name="danceType" value="Unknown" /> Unknown<br />
+            <input type="radio" name="danceType" value="Jazz" /> Jazz<br />
+            <input type="radio" name="danceType" value="Bullet" /> Bullet<br />
+            <input type="radio" name="danceType" value="Street" /> Street<br />
+            <input type="radio" name="danceType" value="Folk" /> Folk<br />
+            <input type="radio" name="danceType" value="Ballroom" /> Ballroom<br />
+            <input type="submit" value="Add Dance"/><br />
+           
+        </form>
+    </body>
+</html>

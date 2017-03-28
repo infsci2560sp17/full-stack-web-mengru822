@@ -21,6 +21,8 @@
                     <td data-th-text="${dance.danceType}"></td>
                     <td data-th-text="${dance.difficulty}"></td>
                     <td data-th-text="${dance.timeNeed}"></td>
+                    <td><a data-th-href="@{/dance/edit/{id}(id=${dance.id})}">edit</a></td>
+                   
                 </tr>
             </table>
         </div>
