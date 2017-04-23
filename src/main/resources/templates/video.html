@@ -1,28 +1,125 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>File Upload</title>
+        <title>Share Videos</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style type = "text/css">
+            body,h1{
+                font-family: "Comic Sans MS",sans-serif
+            }
+            body{
+                text-align: center;
+            }
+        </style>
+         <style>
+            HTML  CSS   Result
+             Edit on 
+            body {
+                 margin: 0;
+                 padding: 0;
+                 background: #ccc;
+            }
+ 
+            .nav ul {
+                 list-style: none;
+                 background-color: #DDA0DD;
+                 text-align: center;
+                 padding: 0;
+                 margin: 0;
+            }
+            .nav li {
+                 font-family: 'Oswald', sans-serif;
+                 font-size: 1.2em;
+                 line-height: 30px;
+                 height: 30px;
+                 border-bottom: 1px #FFA07A;
+            }
+ 
+            .nav a {
+                 text-decoration: none;
+                 color: #fff;
+                 display: block;
+                 transition: .3s background-color;
+            }
+ 
+            .nav a:hover {
+                 background-color: #005f5f;
+            }
+ 
+            .nav a.active {
+                 background-color: #fff;
+                 color: #444;
+                 cursor: default;
+            }
+ 
+            @media screen and (min-width: 800px) {
+            .nav li {
+                 width: 180px;
+                 border-bottom: none;
+                 height: 50px;
+                 line-height: 50px;
+                 font-size: 1.4em;
+            }
+ 
+            /* Option 1 - Display Inline */
+             .nav li {
+                 display: inline-block;
+                 margin-right: -4px;
+             }
+        }
+    </style>
     </head>
     <body>
-
-        <div data-th-if="${message}">
-            <h2 data-th-text="${message}"></h2>
+     <div class="container">
+        <h1 data-th-inline="text">Share interesting videos!</h1>
+    </div>
+    
+     <ul>
+      <li class="home"><a class="active" data-th-href="@{/main}">Home</a></li>
+       <li class="dance"><a  data-th-href="@{/dance}">Dance</a></li>
+        <li class="music"><a  data-th-href="@{/music}">Music</a></li>
+         <li class="good"><a data-th-href="@{/good}">Good</a></li>
+          <li class="share"><a  data-th-href="@{/share}">Share</a></li>
+      </ul>
+        <div class="container">
+        
+            <table style="border: 1px solid black" class="table table-hover">
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>Link</th>
+                </tr>                
+                <tr data-th-each="Video : ${video}">
+                    <td data-th-text="${Video.id}"></td>
+                    <td data-th-text="${Video.description}"></td>
+                    <td data-th-text="${Video.link}"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <hr />
+        </div class="container">
+        Post your discovery <br />
+        <form data-th-action="@{/video/add}" name="addVideoForm" method="post">
+            Description: <input type="text" name="description" /><br />
+            Link to watch it: <input type="text" name="link" /><br />
+            </br>
+            <input type="submit" class="btn btn-success" value="Add video"/>
+        </form>
         </div>
 
-        <div>
-            <form data-th-action="@{/files}" name="uploadFileForm" method="POST" enctype="multipart/form-data" >                
-<!--            <form data-th-action="@{/files(${_csrf.parameterName}=${_csrf.token})}" name="uploadFileForm" method="POST" enctype="multipart/form-data" >                                -->
-                File to upload:<input type="file" name="file" /><br />
-                <input type="submit" value="Upload" />
-            </form>
+        <hr />
+        <div class="container">
+        <div>Go back to <a data-th-href="@{/main}">main page</a> ! </div>
         </div>
-
-        <div>
-            <ul>
-                <li data-th-each="file : ${files}">
-                    <a data-th-href="${file}" data-th-text="${file}"></a>
-                </li>
-            </ul>
-        </div>
+        
+        <hr />       
+        <form data-th-action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
     </body>
 </html>

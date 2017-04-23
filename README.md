@@ -6,10 +6,10 @@
     - People who are interested in dancing and would like to know and watch different style of dancing.
 3. What problem is it intended to solve for the target audience?
     - There's lots of dancing types like tango, waltz, samba, jazz, popping, folk dance, etc. This place is a platform for anyone who interested in dancing to search for types they prefer. It’s not only to enjoy the pictures, videos of dancing, but also share experience and ideas. For instance, beginners are able to learn other’s experience to develop their fields. I'll provide photos, videos, reviews, individualized recommendations and links.
-4. How will it meet the minimum project requirements?
-    - My site will use the freemium model. Most of the content will be freely accessible and some of the content will be charged for downloading. If users want to write comments and interact with each other, a login will be required. Otherwise, users could watch the videos or reviews without login. PayPal will be used as payment method. I’m the beginner in this area since I’m from petroleum and geology science. So these are what I think right now based on the knowledge I learned. I’ll try hard to add more things during the learning of the semester.
+4. How will it meet the minimum project requirements? 
+    - My site will use the freemium model. Dance lovers can find pictures, videos, music, goods about different type of dance. Also users who want to share experience and ideas with others will find much fun here. Beginners who want to learn other’s experience to develop their fields and experts who want to teach and improve their dance skills will communicate with each others. 
 5. Why is your proposed Web application unique or creative beyond simply meeting the minimum requirements?
-    - My site will be a good resource for people users to find out a new way to enjoy dancing and share their experiences. I will track site usage, view comments frequently, sort out the most popular types of dancing. So that I can recommend popular and interesting dancing events to inactive users by sending messages.
+    - My site will be a good resource for people users to find out a new way to enjoy dancing and share their experiences. Users can use add, delete and edit buttons to find all they needs. Also upload the file is important and useful for users. And there is no dancing web for users to not only enjoy the dance but also find goods to buy. I will track site usage, view comments frequently, sort out the most popular types of dancing. So that I can recommend popular and interesting dancing events to inactive users by sending messages.
 
 
 ## Build status
@@ -22,26 +22,33 @@ TODO : Modify to match your project specific Travis Build
 
 ## Web Site
 
-[DanceSpace](https://agile-mountain-46991.herokuapp.com/)
+[Dancing Space](https://agile-mountain-46991.herokuapp.com/)
 
 
 ## Key Features
 
 TODO : Please list key features of your project.
 
-* Key Feature 1
-* Key Feature 2
-* Key Feature N
+* Enables users login
+* Add options( for dance, music, goods)
+* Delete options, edit options
+* Top navigation bar in home page 
+* Carousel Slides
+* User can share his or her own likes
+* File upload
+
 
 ## Project Details
 
 ### Landing Page
 
-TODO : please provide a description of your landing page inluding a screen shot ![](https://.../image.JPG)
-
+In the welcome page(landing page), there is a "enter" for users clicking. In order to get the resource, users need to login. After login, there are 4 options( dance, music, goods, share) in main page that users can click and to the page that users like. Also, users can enjoy the slides of different type of dance.  
+![](/src/main/Welcome.JPG)
 ### User Input Form
 
-TODO : please provide a description of at least 1 user input form including a screen shot ![](https://.../image.jpg)
+
+Users can add their own likes by choosing the type of dance, and entering the name, difficult, times. After finish typing the information, users can uplaod the information to database and it will show on the table above. If users type wrong information, edit button can help to correct it. Also users can type the id number to delete. And there’s back button to return to main page.
+![](/src/main/Dance.JPG)
 
 ## API
 

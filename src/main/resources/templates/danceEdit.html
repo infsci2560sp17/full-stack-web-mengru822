@@ -7,8 +7,23 @@ and open the template in the editor.
 <html>
     <head>
         <title>Edit Dance</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style type = "text/css">
+            body,h1{
+                font-family: "Segoe Script",sans-serif
+            }
+            body{
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
+        <div class="container">
+        <h1 data-th-inline="text">Update your dance here. </h1>
         Add Dance<br />
         <form data-th-action="@{/dance/edit/{id}(id=${dance.id})}" data-th-object="${dance}" data-th-method="put" role="form">
             Name: <input type="text" name="name" data-th-value="${dance.name}" /><br />
@@ -21,8 +36,19 @@ and open the template in the editor.
             <input type="radio" name="danceType" value="Street" /> Street<br />
             <input type="radio" name="danceType" value="Folk" /> Folk<br />
             <input type="radio" name="danceType" value="Ballroom" /> Ballroom<br />
-            <input type="submit" value="Add Dance"/><br />
+            <input type="submit"  class="btn btn-success" value="Add Dance"/><br />
+
+             
+        <hr />
+        <div class="container">
+        <div>Go back to <a data-th-href="@{/main}">main page</a> ! </div>
+        </div>
+
+        <hr />  
+        <form data-th-action="@{/logout}" method="post">
+            <input type="submit" class="btn btn-warning" value="Sign Out"/>
            
         </form>
+        </div>
     </body>
 </html>

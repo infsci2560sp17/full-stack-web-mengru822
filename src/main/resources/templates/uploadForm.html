@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>File Upload</title>
+        <title>Upload File</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style type = "text/css">
+            body,h1{
+                font-family: "Segoe Script",sans-serif
+            }
+           
+        </style>
     </head>
     <body>
 
-        <div data-th-if="${message}">
+        <div data-th-if="${message}" class="container">
             <h2 data-th-text="${message}"></h2>
         </div>
 
-        <div>
+       
+        <div class="container">
             <form data-th-action="@{/files}" name="uploadFileForm" method="POST" enctype="multipart/form-data" >                
-<!--            <form data-th-action="@{/files(${_csrf.parameterName}=${_csrf.token})}" name="uploadFileForm" method="POST" enctype="multipart/form-data" >                                -->
-                File to upload:<input type="file" name="file" /><br />
-                <input type="submit" value="Upload" />
+        
+              File to upload:<input type="file" name="file" /><br />
+                <input type="submit" class="btn btn-success" value="Upload" />
             </form>
         </div>
 
-        <div>
+        <div class="container">
             <ul>
                 <li data-th-each="file : ${files}">
                     <a data-th-href="${file}" data-th-text="${file}"></a>

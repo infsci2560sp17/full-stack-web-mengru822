@@ -2,12 +2,102 @@
 <html>
     <head>
         <title>Share Goods</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style type = "text/css">
+            body,h1{
+                font-family: "Segoe Script",sans-serif
+            }
+            body{
+                text-align: center;
+                background-image: url('https://s-media-cache-ak0.pinimg.com/originals/54/90/dc/5490dc9b2805814da456430e0d929bf7.jpg');
+                min-height: 100%;
+                background-position: center;
+                background-size: cover;
+                
+            }
+        </style>
+        <style>
+            HTML  CSS   Result
+             Edit on 
+            body {
+                 margin: 0;
+                 padding: 0;
+                 background: #ccc;
+            }
+ 
+            .nav ul {
+                 list-style: none;
+                 background-color: #20B2AA;
+                 text-align: center;
+                 padding: 0;
+                 margin: 0;
+            }
+            .nav li {
+                 font-family: 'Oswald', sans-serif;
+                 font-size: 1.2em;
+                 line-height: 30px;
+                 height: 30px;
+                 border-bottom: 1px #FFA07A;
+            }
+ 
+            .nav a {
+                 text-decoration: none;
+                 color: #fff;
+                 display: block;
+                 transition: .3s background-color;
+            }
+ 
+            .nav a:hover {
+                 background-color: #005f5f;
+            }
+ 
+            .nav a.active {
+                 background-color: #fff;
+                 color: #444;
+                 cursor: default;
+            }
+ 
+            @media screen and (min-width: 800px) {
+            .nav li {
+                 width: 180px;
+                 border-bottom: none;
+                 height: 50px;
+                 line-height: 50px;
+                 font-size: 1.4em;
+            }
+ 
+            /* Option 1 - Display Inline */
+             .nav li {
+                 display: inline-block;
+                 margin-right: -4px;
+             }
+        }
+    </style>
+ 
     </head>
     <body>
-        <h1 data-th-inline="text">Explore good staff in dancing and enjoy it! </h1>
+        <div class="container">
+             <h1 data-th-inline="text">Explore good staff in dancing and enjoy it! </h1>
 
-        <div>
-            <table style="border: 1px blue">
+        </div>
+        
+        <div class="nav">
+      <ul>
+      <li class="home"><a  data-th-href="@{/main}">Home</a></li>
+       <li class="dance"><a  data-th-href="@{/dance}">Dance</a></li>
+        <li class="music"><a  data-th-href="@{/music}">Music</a></li>
+         <li class="good"><a class="active" data-th-href="@{/good}">Good</a></li>
+          <li class="share"><a  data-th-href="@{/share}">Share</a></li>
+      </ul>
+      </div>
+
+
+        <div class="container">
+            <table align="center" style="border: 1px blue" class="table table-hover">
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
@@ -24,16 +114,19 @@
         </div>
         
         <hr />
+        <div class="container">
         Post your favorite <br />
         <form data-th-action="@{/good/add}" name="addGoodForm" method="post">
             Title: <input type="text" name="title" /><br />
             Brand: <input type="text" name="brand" /><br />
             Link to buy it: <input type="text" name="link" /><br />
-            <input type="submit" value="Add good staff"/>
+            
+            <input type="submit" class="btn btn-success" value="Add good staff"/>
         </form>
+        </div>
         
         <hr />
-        <div>Go back to <a data-th-href="@{/main}">main page</a> ! </div>
+        <div class="container">Go back to <a data-th-href="@{/main}">main page</a> ! </div>
         
         <hr />       
         <form data-th-action="@{/logout}" method="post">

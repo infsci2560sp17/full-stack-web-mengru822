@@ -18,7 +18,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-
+    
 
 @SpringBootApplication
 @ComponentScan({"edu.infsci2560"})
@@ -48,8 +48,8 @@ public class FullStackWebApplication {
 
         VideoRepository videoRepository = ctx.getBean(VideoRepository.class);
         
-            videoRepository.save(new Video(1L, "Easy kids dance", "https://www.youtube.com/watch?v=t6PmB6tMBOc"));
-            videoRepository.save(new Video(2L, "Popping Final 2017","https://www.youtube.com/watch?v=Dhmgr8-tagE"));
+        videoRepository.save(new Video(1L, "Easy kids dance", "https://www.youtube.com/watch?v=t6PmB6tMBOc"));
+        videoRepository.save(new Video(2L, "Popping Final 2017","https://www.youtube.com/watch?v=Dhmgr8-tagE"));
         
     }
 

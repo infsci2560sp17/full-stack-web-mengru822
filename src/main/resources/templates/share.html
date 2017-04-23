@@ -1,26 +1,124 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
     <head>
         <title>Your share</title>
+    
+    <body>
+ <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style type = "text/css">
+            body,h1{
+                font-family: "Segoe Script",sans-serif
+            }
+            
+            body{
+                text-align: center;
+            
+                background-image: url('http://elevatepromo.com/wp-content/uploads/2014/04/Bad-swag.jpg');
+                min-height: 100%;
+                background-position: center;
+                background-size: cover;
+            
+            }
+        </style>
+         <style>
+            HTML  CSS   Result
+             Edit on 
+            body {
+                 margin: 0;
+                 padding: 0;
+                 background: #ccc;
+            }
+ 
+            .nav ul {
+                 list-style: none;
+                 background-color: #FF7F50;
+                 text-align: center;
+                 padding: 0;
+                 margin: 0;
+            }
+            .nav li {
+                 font-family: 'Oswald', sans-serif;
+                 font-size: 1.2em;
+                 line-height: 30px;
+                 height: 30px;
+                 border-bottom: 1px #FFA07A;
+            }
+ 
+            .nav a {
+                 text-decoration: none;
+                 color: #fff;
+                 display: block;
+                 transition: .3s background-color;
+            }
+ 
+            .nav a:hover {
+                 background-color: #005f5f;
+            }
+ 
+            .nav a.active {
+                 background-color: #fff;
+                 color: #444;
+                 cursor: default;
+            }
+ 
+            @media screen and (min-width: 800px) {
+            .nav li {
+                 width: 180px;
+                 border-bottom: none;
+                 height: 50px;
+                 line-height: 50px;
+                 font-size: 1.4em;
+            }
+ 
+            /* Option 1 - Display Inline */
+             .nav li {
+                 display: inline-block;
+                 margin-right: -4px;
+             }
+        }
+    </style>
+        </body>
     </head>
     
     <body>
-        <h1 data-th-inline="text">Share your own dance</h1>
+        <div class="container">
+         <h1 data-th-inline="text">Share your own dance</h1>
+         </div>
 
+    <div class="nav">
+     <ul>
+      <li class="home"><a  data-th-href="@{/main}">Home</a></li>
+       <li class="dance"><a  data-th-href="@{/dance}">Dance</a></li>
+        <li class="music"><a  data-th-href="@{/music}">Music</a></li>
+         <li class="good"><a data-th-href="@{/good}">Good</a></li>
+          <li class="share"><a class="active" data-th-href="@{/share}">Share</a></li>
+      </ul>
+      </div>
+    
         <hr />
+        <div class="container">
             <a data-th-href="@{/files}">Upload a File</a>
         <hr />
-        
+        </div>
+
         <hr />
+        <div class="container">
         <div>View all <a data-th-href="@{/files}">files</a> </div>
         <hr /> 
+        </div>
         
         <hr />
+        <div class="container">
         <div>Go back to <a data-th-href="@{/main}">main page</a> ! </div>
-        
+        </div>
+
         <hr />  
         <form data-th-action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
+            <input type="submit" class="btn btn-warning" value="Sign Out"/>
         </form>
     </body>
 </html>
