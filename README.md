@@ -27,7 +27,6 @@ TODO : Modify to match your project specific Travis Build
 
 ## Key Features
 
-TODO : Please list key features of your project.
 
 * Enables users login
 * Add options( for dance, music, goods)
